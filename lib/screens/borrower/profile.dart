@@ -9,7 +9,7 @@ class Profile extends StatelessWidget {
         children: <Widget>[
           Expanded(
             child: CircleAvatar(
-              child: Text('B', style: Theme.of(context).textTheme.display1),
+              child: Text('B', style: Theme.of(context).textTheme.headline4),
               radius: 44.0,
             ),
           ),
@@ -20,7 +20,7 @@ class Profile extends StatelessWidget {
               children: <Widget>[
                 Text(
                   'Bruce Wayne',
-                  style: Theme.of(context).textTheme.display1,
+                  style: Theme.of(context).textTheme.headline4,
                 ),
                 SizedBox(height: 2),
                 Row(
@@ -29,7 +29,7 @@ class Profile extends StatelessWidget {
                       '12/02/1973',
                       style: Theme.of(context)
                           .textTheme
-                          .body1
+                          .bodyText2
                           .copyWith(fontSize: 16.0),
                     ),
                     SizedBox(width: 30),
@@ -37,7 +37,7 @@ class Profile extends StatelessWidget {
                       'Male',
                       style: Theme.of(context)
                           .textTheme
-                          .body1
+                          .bodyText2
                           .copyWith(fontSize: 16.0),
                     ),
                   ],
@@ -47,7 +47,7 @@ class Profile extends StatelessWidget {
                   'bruce.wayne@gmail.com',
                   style: Theme.of(context)
                       .textTheme
-                      .body1
+                      .bodyText2
                       .copyWith(fontSize: 16.0),
                 ),
                 SizedBox(height: 2),
@@ -55,7 +55,7 @@ class Profile extends StatelessWidget {
                   '9383256859',
                   style: Theme.of(context)
                       .textTheme
-                      .body1
+                      .bodyText2
                       .copyWith(fontSize: 16.0),
                 ),
                 SizedBox(height: 10),
@@ -63,7 +63,7 @@ class Profile extends StatelessWidget {
                   '#12/A Wayne Mansion, Central road, Gotham - 172689',
                   style: Theme.of(context)
                       .textTheme
-                      .body1
+                      .bodyText2
                       .copyWith(fontSize: 16.0),
                 ),
                 SizedBox(height: 10),
