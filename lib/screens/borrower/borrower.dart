@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:photon/screens/borrower/profile.dart';
+import 'package:photon/screens/borrower/transaction_list.dart';
 
 class Borrower extends StatelessWidget {
   @override
@@ -14,7 +15,7 @@ class Borrower extends StatelessWidget {
       body: Column(
         children: <Widget>[
           Profile(),
-          Divider(color: Colors.black),
+          Expanded(child: TransactionListView()),
         ],
       ),
     );
