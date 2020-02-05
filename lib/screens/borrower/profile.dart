@@ -25,16 +25,10 @@ class Profile extends StatelessWidget {
                 SizedBox(height: 2),
                 Row(
                   children: <Widget>[
+                    Icon(Icons.date_range),
+                    SizedBox(width: 10),
                     Text(
                       '12/02/1973',
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyText2
-                          .copyWith(fontSize: 16.0),
-                    ),
-                    SizedBox(width: 30),
-                    Text(
-                      'Male',
                       style: Theme.of(context)
                           .textTheme
                           .bodyText2
@@ -43,28 +37,48 @@ class Profile extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 2),
-                Text(
-                  'bruce.wayne@gmail.com',
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyText2
-                      .copyWith(fontSize: 16.0),
+                Row(
+                  children: <Widget>[
+                    Icon(Icons.email),
+                    SizedBox(width: 10),
+                    Text(
+                      'bruce.wayne@gmail.com',
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyText2
+                          .copyWith(fontSize: 16.0),
+                    ),
+                  ],
                 ),
                 SizedBox(height: 2),
-                Text(
-                  '9383256859',
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyText2
-                      .copyWith(fontSize: 16.0),
+                Row(
+                  children: <Widget>[
+                    Icon(Icons.phone),
+                    SizedBox(width: 10),
+                    Text(
+                      '9383256859',
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyText2
+                          .copyWith(fontSize: 16.0),
+                    ),
+                  ],
                 ),
-                SizedBox(height: 10),
-                Text(
-                  '#12/A Wayne Mansion, Central road, Gotham - 172689',
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyText2
-                      .copyWith(fontSize: 16.0),
+                SizedBox(height: 2),
+                Row(
+                  children: <Widget>[
+                    Icon(Icons.location_on),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Text(
+                        '#12/A Wayne Mansion, Central road, Gotham - 172689',
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyText2
+                            .copyWith(fontSize: 16.0),
+                      ),
+                    ),
+                  ],
                 ),
                 SizedBox(height: 10),
               ],
