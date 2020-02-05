@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:photon/router.dart';
 
 class BorrowerListView extends StatelessWidget {
   @override
@@ -30,6 +31,7 @@ class BorrowerListTile extends StatelessWidget {
       title: Text('Bruce Wayne'),
       subtitle: Text('1329'),
       trailing: Text('Rs 150000'),
+      onTap: () => {Navigator.pushNamed(context, Router.borrowerRoute)},
     );
   }
 }
