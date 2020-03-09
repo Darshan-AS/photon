@@ -1,0 +1,9 @@
+{
+  "id": 1,
+  "name": "Bruce Wayne",
+  "gender": "M",
+  "dob": "1939-05-27",
+  "email": "bruce.wayne@gmail.com",
+  "phone": "1234567890",
+  "address": "1007, Mountain Drive, Gotham, New Jersey, United States"
+}
