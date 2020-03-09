@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:photon/screens/home/borrower_list.dart';
 
 import 'backdrop.dart';
+import 'borrower_list.dart';
 
 class Home extends StatelessWidget {
   @override
