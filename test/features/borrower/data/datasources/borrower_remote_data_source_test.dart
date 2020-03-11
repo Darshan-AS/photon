@@ -28,7 +28,7 @@ void main() {
   group('getBorrower', () {
     final tId = 1;
     final tBorrowerModel =
-    BorrowerModel.fromJson(jsonDecode(fixture('borrower.json')));
+        BorrowerModel.fromJson(jsonDecode(fixture('borrower.json')));
 
     test(
       'should perform a GET request on a base_url/id with application/json header',
@@ -69,7 +69,7 @@ void main() {
 
   group('getAllBorrowers', () {
     final tAllBorrowers =
-    BorrowerModel.fromJsonList(jsonDecode(fixture('borrowers.json')));
+        BorrowerModel.fromJsonList(jsonDecode(fixture('borrowers.json')));
 
     test(
       'should perform a GET request on a base_url/ with application/json header',
