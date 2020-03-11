@@ -34,8 +34,7 @@ void main() {
 
   group('fromJson', () {
     test('should return a valid model', () async {
-      final Map<String, dynamic> jsonMap =
-          json.decode(fixture('borrower.json'));
+      final Map<String, dynamic> jsonMap = jsonDecode(fixture('borrower.json'));
 
       final result = BorrowerModel.fromJson(jsonMap);
 
@@ -43,7 +42,7 @@ void main() {
     });
 
     test('should return a list of valid models', () async {
-      final List<dynamic> jsonList = json.decode(fixture('borrowers.json'));
+      final List<dynamic> jsonList = jsonDecode(fixture('borrowers.json'));
 
       final result = BorrowerModel.fromJsonList(jsonList);
 
@@ -55,7 +54,7 @@ void main() {
     test('should return a valid json object', () async {
       final result = tBorrowerModel.toJson();
 
-      final expectedMap = json.decode(fixture('borrower.json'));
+      final expectedMap = jsonDecode(fixture('borrower.json'));
 
       expect(result, expectedMap);
     });
@@ -66,7 +65,7 @@ void main() {
         tOtherBorrowerModel,
       ]);
 
-      final expectedList = json.decode(fixture('borrowers.json'));
+      final expectedList = jsonDecode(fixture('borrowers.json'));
 
       expect(result, expectedList);
     });

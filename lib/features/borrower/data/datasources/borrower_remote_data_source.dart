@@ -18,13 +18,13 @@ class BorrowerRemoteDataSourceImpl implements BorrowerRemoteDataSource {
 
   @override
   Future<BorrowerModel> getBorrower(int id) async =>
-      BorrowerModel.fromJson(json.decode(await _getResponseFromUrl(
+      BorrowerModel.fromJson(jsonDecode(await _getResponseFromUrl(
         'http://localhost:8000/users/api/borrowers/$id/',
       )));
 
   @override
   Future<List<BorrowerModel>> getAllBorrowers() async =>
-      BorrowerModel.fromJsonList(json.decode(await _getResponseFromUrl(
+      BorrowerModel.fromJsonList(jsonDecode(await _getResponseFromUrl(
         'http://localhost:8000/users/api/borrowers/',
       )));
 
