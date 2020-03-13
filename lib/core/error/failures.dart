@@ -10,3 +10,12 @@ class ServerFailure extends Failure {
   @override
   List<Object> get props => [this.message];
 }
+
+class InputFailure extends Failure {
+  final String message;
+
+  InputFailure([this.message]);
+
+  @override
+  List<Object> get props => [this.message];
+}
