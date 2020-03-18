@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:photon/injection_container.dart' as dependencyInjector;
 import 'package:photon/router.dart';
-import 'package:photon/screens/home/home.dart';
 
-void main() => runApp(Photon());
+import 'features/home/screens/home/home.dart';
+
+Future<void> main() async {
+  await dependencyInjector.init();
+  runApp(Photon());
+}
 
 class Photon extends StatelessWidget {
   @override
