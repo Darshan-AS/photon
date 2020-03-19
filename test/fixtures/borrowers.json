@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Bruce Wayne",
+    "gender": "M",
+    "dob": "1939-05-27",
+    "email": "bruce.wayne@gmail.com",
+    "phone": "1234567890",
+    "address": "1007, Mountain Drive, Gotham, New Jersey, United States"
+  },
+  {
+    "id": 2,
+    "name": "Clark Kent",
+    "gender": "M",
+    "dob": "1973-06-18",
+    "email": "clark.kent@gmail.com",
+    "phone": "0987654321",
+    "address": "344, Clinton street, Apartment 3D, Metropolis, New York, United States"
+  }
+]

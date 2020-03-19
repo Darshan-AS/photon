@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:photon/screens/borrower/borrower.dart';
-import 'package:photon/screens/home/home.dart';
+
+import 'features/home/screens/home/home.dart';
 
 class Router {
   static const String homeRoute = '/';
