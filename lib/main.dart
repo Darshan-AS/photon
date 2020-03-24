@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:photon/injection_container.dart' as dependencyInjector;
 import 'package:photon/router.dart';
 
-import 'features/home/screens/home/home.dart';
+import 'features/borrower/presentation/bloc/bloc.dart';
+import 'injection_container.dart';
 
 Future<void> main() async {
   await dependencyInjector.init();
@@ -12,10 +14,12 @@ Future<void> main() async {
 class Photon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Home(),
-      initialRoute: Router.homeRoute,
-      onGenerateRoute: Router.generateRoute,
+    return BlocProvider(
+      create: (_) => serviceLocator<BorrowerBloc>(),
+      child: MaterialApp(
+        initialRoute: Router.homeRoute,
+        onGenerateRoute: Router.generateRoute,
+      ),
     );
   }
 }

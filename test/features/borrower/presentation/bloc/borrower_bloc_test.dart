@@ -175,4 +175,5 @@ void main() {
       expect: [Loading(), Error(message: SERVER_FAILURE_MESSAGE)],
     );
   });
+  bloc.close();
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:photon/screens/borrower/borrower.dart';
+import 'package:photon/features/borrower/presentation/pages/borrower.dart';
 
 import 'features/home/screens/home/home.dart';
 
