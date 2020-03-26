@@ -55,6 +55,10 @@ void main() {
     );
   });
 
+  tearDown(() {
+    bloc?.close();
+  });
+
   blocTest(
     'should return an [Empty] state as the initial bloc state',
     build: () async => bloc,
@@ -175,5 +179,4 @@ void main() {
       expect: [Loading(), Error(message: SERVER_FAILURE_MESSAGE)],
     );
   });
-  bloc.close();
 }
