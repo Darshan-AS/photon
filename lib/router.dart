@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:photon/features/borrower/presentation/pages/borrower.dart';
+import 'package:photon/features/borrower/presentation/pages/borrowerDetail.dart';
 
 import 'features/home/screens/home/home.dart';
 
@@ -12,7 +12,7 @@ class Router {
       case homeRoute:
         return MaterialPageRoute(builder: (_) => Home());
       case borrowerRoute:
-        return MaterialPageRoute(builder: (_) => Borrower());
+        return MaterialPageRoute(builder: (_) => BorrowerDetail(id: '1'));
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

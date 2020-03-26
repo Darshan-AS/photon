@@ -3,10 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:photon/features/borrower/presentation/bloc/bloc.dart';
 import 'package:photon/features/borrower/presentation/widgets/widgets.dart';
 
-class Borrower extends StatelessWidget {
+class BorrowerDetail extends StatelessWidget {
   final String id;
 
-  const Borrower({Key key, this.id}) : super(key: key);
+  const BorrowerDetail({Key key, this.id}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
