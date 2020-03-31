@@ -14,10 +14,13 @@ void main() {
       expect(() => call(null), throwsAssertionError);
     });
 
-    test('should return input failure when email is invalid', () {
+    test('should return invalid email failure when email is invalid', () {
       final result = emailValidator(invalidEmail);
 
-      expect(result, Left(InputFailure('Invalid email')));
+      final Either<ValueFailure<String>, String> expected =
+      Left(ValueFailure.invalidEmail(invalidValue: invalidEmail));
+
+      expect(result, expected);
     });
 
     test('should return email when it is valid', () {
@@ -37,10 +40,13 @@ void main() {
       expect(() => call(null), throwsAssertionError);
     });
 
-    test('should return input failure when password is invalid', () {
+    test('should return shord password failure when password is invalid', () {
       final result = passwordValidator(invalidPassword);
 
-      expect(result, Left(InputFailure('Password length is too short')));
+      final Either<ValueFailure<String>, String> expected =
+      Left(ValueFailure.shortPassword(invalidValue: invalidPassword));
+
+      expect(result, expected);
     });
 
     test('should return password when it is valid', () {
