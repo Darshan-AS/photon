@@ -5,15 +5,15 @@ import 'package:photon/core/error/failures.dart';
 import '../entities.dart';
 
 abstract class AuthRepository {
-  Future<Either<Failure, Unit>> signUpWithEmail({
+  Future<Either<AuthFailure, Unit>> signUpWithEmail({
     @required Email email,
     @required Password password,
   });
 
-  Future<Either<Failure, Unit>> signInWithEmail({
+  Future<Either<AuthFailure, Unit>> signInWithEmail({
     @required Email email,
     @required Password password,
   });
 
-  Future<Either<Failure, Unit>> signInWithGoogle();
+  Future<Either<AuthFailure, Unit>> signInWithGoogle();
 }

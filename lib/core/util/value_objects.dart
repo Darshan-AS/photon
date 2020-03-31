@@ -1,11 +1,14 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:photon/core/error/failures.dart';
 
+@immutable
 abstract class ValueObject<T> extends Equatable {
   const ValueObject();
 
-  Either<Failure, T> get value;
+  Either<ValueFailure<String>, String> get value;
 
   @override
   List<Object> get props => [value];

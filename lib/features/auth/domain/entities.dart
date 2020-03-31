@@ -4,7 +4,7 @@ import 'package:photon/core/util/value_objects.dart';
 import 'package:photon/core/util/value_validators.dart';
 
 class Email extends ValueObject<String> {
-  final Either<Failure, String> value;
+  final Either<ValueFailure<String>, String> value;
 
   factory Email(String email) => Email._(emailValidator(email));
 
@@ -12,7 +12,7 @@ class Email extends ValueObject<String> {
 }
 
 class Password extends ValueObject<String> {
-  final Either<Failure, String> value;
+  final Either<ValueFailure<String>, String> value;
 
   factory Password(String password) => Password._(passwordValidator(password));
 

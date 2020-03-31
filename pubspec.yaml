@@ -31,6 +31,8 @@ dependencies:
   http: ^0.12.0+4
   # Local cache
   shared_preferences: ^0.5.6+3
+  # Unions for failure objects
+  freezed_annotation: ^0.7.1
 
 dev_dependencies:
   flutter_test:
