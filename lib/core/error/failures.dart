@@ -19,3 +19,12 @@ class InputFailure extends Failure {
   @override
   List<Object> get props => [this.message];
 }
+
+class AuthFailure extends Failure {
+  final String message;
+
+  AuthFailure([this.message]);
+
+  @override
+  List<Object> get props => [this.message];
+}
