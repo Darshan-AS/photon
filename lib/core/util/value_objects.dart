@@ -15,4 +15,6 @@ abstract class ValueObject<T> extends Equatable {
 
   @override
   String toString() => 'Value: $value';
+
+  bool isValid() => value.isRight();
 }

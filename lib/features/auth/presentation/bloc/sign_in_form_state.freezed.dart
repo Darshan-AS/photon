@@ -33,13 +33,9 @@ const $SignInFormState = _$SignInFormStateTearOff();
 
 mixin _$SignInFormState {
   Email get email;
-
   Password get password;
-
   bool get isSubmitting;
-
   bool get showErrorMessages;
-
   Option<Either<AuthFailure, Unit>> get authResponseOption;
 
   $SignInFormStateCopyWith<SignInFormState> get copyWith;
@@ -49,7 +45,6 @@ abstract class $SignInFormStateCopyWith<$Res> {
   factory $SignInFormStateCopyWith(
           SignInFormState value, $Res Function(SignInFormState) then) =
       _$SignInFormStateCopyWithImpl<$Res>;
-
   $Res call(
       {Email email,
       Password password,
@@ -63,7 +58,6 @@ class _$SignInFormStateCopyWithImpl<$Res>
   _$SignInFormStateCopyWithImpl(this._value, this._then);
 
   final SignInFormState _value;
-
   // ignore: unused_field
   final $Res Function(SignInFormState) _then;
 
@@ -95,7 +89,6 @@ abstract class _$SignInFormStateCopyWith<$Res>
   factory _$SignInFormStateCopyWith(
           _SignInFormState value, $Res Function(_SignInFormState) then) =
       __$SignInFormStateCopyWithImpl<$Res>;
-
   @override
   $Res call(
       {Email email,
@@ -212,19 +205,14 @@ abstract class _SignInFormState implements SignInFormState {
 
   @override
   Email get email;
-
   @override
   Password get password;
-
   @override
   bool get isSubmitting;
-
   @override
   bool get showErrorMessages;
-
   @override
   Option<Either<AuthFailure, Unit>> get authResponseOption;
-
   @override
   _$SignInFormStateCopyWith<_SignInFormState> get copyWith;
 }
