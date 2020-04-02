@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
 import 'package:photon/features/borrower/domain/entities/borrower.dart';
 
 abstract class BorrowerState extends Equatable {
