@@ -1,41 +1,20 @@
-import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:photon/features/borrower/domain/entities/borrower.dart';
 
-abstract class BorrowerState extends Equatable {
-  const BorrowerState();
+part 'borrower_state.freezed.dart';
 
-  @override
-  List<Object> get props => [];
-}
+@freezed
+abstract class BorrowerState with _$BorrowerState {
+  const factory BorrowerState.empty() = Empty;
 
-class Empty extends BorrowerState {}
+  const factory BorrowerState.loading() = Loading;
 
-class Loading extends BorrowerState {}
+  const factory BorrowerState.borrowerLoaded({@required Borrower borrower}) =
+      BorrowerLoaded;
 
-class BorrowerLoaded extends BorrowerState {
-  final Borrower borrower;
+  const factory BorrowerState.allBorrowersLoaded(
+      {@required List<Borrower> borrowersList}) = AllBorrowersLoaded;
 
-  BorrowerLoaded({@required this.borrower});
-
-  @override
-  List<Object> get props => [borrower];
-}
-
-class AllBorrowersLoaded extends BorrowerState {
-  final List<Borrower> borrowersList;
-
-  AllBorrowersLoaded({@required this.borrowersList});
-
-  @override
-  List<Object> get props => [borrowersList];
-}
-
-class Error extends BorrowerState {
-  final String message;
-
-  Error({@required this.message});
-
-  @override
-  List<Object> get props => [message];
+  const factory BorrowerState.error({String message}) = Error;
 }

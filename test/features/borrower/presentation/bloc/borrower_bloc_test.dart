@@ -63,7 +63,7 @@ void main() {
     'should return an [Empty] state as the initial bloc state',
     build: () async => bloc,
     skip: 0,
-    expect: [Empty()],
+    expect: [BorrowerState.empty()],
   );
 
   group('getBorrowerEvent', () {
@@ -95,7 +95,7 @@ void main() {
       act: (bloc) {
         setUpMockInputConverterFailure();
 
-        return bloc.add(GetBorrowerEvent('12@4'));
+        return bloc.add(BorrowerEvent.getBorrower('12@4'));
       },
       expect: [Error(message: INVALID_INPUT_FAILURE_MESSAGE)],
     );
@@ -107,7 +107,7 @@ void main() {
         setUpMockInputConverterSuccess();
         setUpMockGetBorrowerSuccess();
 
-        return bloc.add(GetBorrowerEvent(tIdString));
+        return bloc.add(BorrowerEvent.getBorrower(tIdString));
       },
       verify: (_) async => verify(mockGetBorrower(Params(id: tIdParsed))),
     );
@@ -119,9 +119,12 @@ void main() {
         setUpMockInputConverterSuccess();
         setUpMockGetBorrowerSuccess();
 
-        return bloc.add(GetBorrowerEvent(tIdString));
+        return bloc.add(BorrowerEvent.getBorrower(tIdString));
       },
-      expect: [Loading(), BorrowerLoaded(borrower: tBorrower)],
+      expect: [
+        BorrowerState.loading(),
+        BorrowerState.borrowerLoaded(borrower: tBorrower)
+      ],
     );
 
     blocTest(
@@ -131,9 +134,12 @@ void main() {
         setUpMockInputConverterSuccess();
         setUpMockGetBorrowerFailure();
 
-        return bloc.add(GetBorrowerEvent(tIdString));
+        return bloc.add(BorrowerEvent.getBorrower(tIdString));
       },
-      expect: [Loading(), Error(message: SERVER_FAILURE_MESSAGE)],
+      expect: [
+        BorrowerState.loading(),
+        BorrowerState.error(message: SERVER_FAILURE_MESSAGE)
+      ],
     );
   });
 
@@ -152,7 +158,7 @@ void main() {
       act: (bloc) {
         setUpMockGetAllBorrowersSuccess();
 
-        return bloc.add(GetAllBorrowersEvent());
+        return bloc.add(BorrowerEvent.getAllBorrowers());
       },
       verify: (_) async => verify(mockGetAllBorrowers(NoParams())),
     );
@@ -163,9 +169,12 @@ void main() {
       act: (bloc) {
         setUpMockGetAllBorrowersSuccess();
 
-        return bloc.add(GetAllBorrowersEvent());
+        return bloc.add(BorrowerEvent.getAllBorrowers());
       },
-      expect: [Loading(), AllBorrowersLoaded(borrowersList: tAllBorrowers)],
+      expect: [
+        BorrowerState.loading(),
+        BorrowerState.allBorrowersLoaded(borrowersList: tAllBorrowers)
+      ],
     );
 
     blocTest(
@@ -174,9 +183,12 @@ void main() {
       act: (bloc) {
         setUpMockGetAllBorrowersFailure();
 
-        return bloc.add(GetAllBorrowersEvent());
+        return bloc.add(BorrowerEvent.getAllBorrowers());
       },
-      expect: [Loading(), Error(message: SERVER_FAILURE_MESSAGE)],
+      expect: [
+        BorrowerState.loading(),
+        BorrowerState.error(message: SERVER_FAILURE_MESSAGE)
+      ],
     );
   });
 }

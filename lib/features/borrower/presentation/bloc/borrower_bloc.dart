@@ -31,11 +31,11 @@ class BorrowerBloc extends Bloc<BorrowerEvent, BorrowerState> {
 
   @override
   Stream<BorrowerState> mapEventToState(BorrowerEvent event) async* {
-    if (event is GetBorrowerEvent) {
-      yield* _yieldBorrower(event);
-    } else if (event is GetAllBorrowersEvent) {
+    yield* event.map(getBorrower: (e) async* {
+      yield* _yieldBorrower(e);
+    }, getAllBorrowers: (_) async* {
       yield* _yieldAllBorrowers();
-    }
+    });
   }
 
   Stream<BorrowerState> _yieldBorrower(GetBorrowerEvent event) async* {
@@ -43,25 +43,26 @@ class BorrowerBloc extends Bloc<BorrowerEvent, BorrowerState> {
 
     yield* inputEither.fold(
       (failure) async* {
-        yield Error(message: INVALID_INPUT_FAILURE_MESSAGE);
+        yield BorrowerState.error(message: INVALID_INPUT_FAILURE_MESSAGE);
       },
       (id) async* {
-        yield Loading();
+        yield BorrowerState.loading();
         final borrowerEither = await getBorrower(Params(id: id));
         yield borrowerEither.fold(
-          (failure) => Error(message: SERVER_FAILURE_MESSAGE),
-          (borrower) => BorrowerLoaded(borrower: borrower),
+          (failure) => BorrowerState.error(message: SERVER_FAILURE_MESSAGE),
+          (borrower) => BorrowerState.borrowerLoaded(borrower: borrower),
         );
       },
     );
   }
 
   Stream<BorrowerState> _yieldAllBorrowers() async* {
-    yield Loading();
+    yield BorrowerState.loading();
     final borrowersListEither = await getAllBorrowers(NoParams());
     yield borrowersListEither.fold(
-      (failure) => Error(message: SERVER_FAILURE_MESSAGE),
-      (borrowersList) => AllBorrowersLoaded(borrowersList: borrowersList),
+      (failure) => BorrowerState.error(message: SERVER_FAILURE_MESSAGE),
+      (borrowersList) =>
+          BorrowerState.allBorrowersLoaded(borrowersList: borrowersList),
     );
   }
 }

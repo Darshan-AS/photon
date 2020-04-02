@@ -1,19 +1,11 @@
-import 'package:equatable/equatable.dart';
+import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-abstract class BorrowerEvent extends Equatable {
-  const BorrowerEvent();
+part 'borrower_event.freezed.dart';
 
-  @override
-  List<Object> get props => [];
+@freezed
+abstract class BorrowerEvent with _$BorrowerEvent {
+  const factory BorrowerEvent.getBorrower(String idString) = GetBorrowerEvent;
+
+  const factory BorrowerEvent.getAllBorrowers() = GetAllBorrowersEvent;
 }
-
-class GetBorrowerEvent extends BorrowerEvent {
-  final String idString;
-
-  GetBorrowerEvent(this.idString);
-
-  @override
-  List<Object> get props => [idString];
-}
-
-class GetAllBorrowersEvent extends BorrowerEvent {}
