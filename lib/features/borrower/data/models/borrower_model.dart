@@ -1,4 +1,4 @@
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
 import 'package:photon/features/borrower/domain/entities/borrower.dart';
 
 class BorrowerModel extends Borrower {

@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
 import 'package:photon/core/error/exceptions.dart';
 import 'package:photon/core/error/failures.dart';
 import 'package:photon/features/borrower/data/datasources/borrower_remote_data_source.dart';

@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
 import 'package:photon/core/usecases/usecase.dart';
 import 'package:photon/core/util/input_converter.dart';
 import 'package:photon/features/borrower/domain/usecases/get_all_borrowers.dart';
