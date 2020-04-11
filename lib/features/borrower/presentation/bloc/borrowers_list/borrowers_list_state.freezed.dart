@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
 
-part of 'borrower_state.dart';
+part of 'borrowers_list_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -9,8 +9,8 @@ part of 'borrower_state.dart';
 
 T _$identity<T>(T value) => value;
 
-class _$BorrowerStateTearOff {
-  const _$BorrowerStateTearOff();
+class _$BorrowersListStateTearOff {
+  const _$BorrowersListStateTearOff();
 
   Empty empty() {
     return const Empty();
@@ -18,12 +18,6 @@ class _$BorrowerStateTearOff {
 
   Loading loading() {
     return const Loading();
-  }
-
-  BorrowerLoaded borrowerLoaded({@required Borrower borrower}) {
-    return BorrowerLoaded(
-      borrower: borrower,
-    );
   }
 
   AllBorrowersLoaded allBorrowersLoaded(
@@ -41,58 +35,58 @@ class _$BorrowerStateTearOff {
 }
 
 // ignore: unused_element
-const $BorrowerState = _$BorrowerStateTearOff();
+const $BorrowersListState = _$BorrowersListStateTearOff();
 
-mixin _$BorrowerState {
+mixin _$BorrowersListState {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result empty(),
     @required Result loading(),
-    @required Result borrowerLoaded(@required Borrower borrower),
     @required Result allBorrowersLoaded(@required List<Borrower> borrowersList),
     @required Result error(String message),
   });
+
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result empty(),
     Result loading(),
-    Result borrowerLoaded(@required Borrower borrower),
     Result allBorrowersLoaded(@required List<Borrower> borrowersList),
     Result error(String message),
     @required Result orElse(),
   });
+
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result empty(Empty value),
     @required Result loading(Loading value),
-    @required Result borrowerLoaded(BorrowerLoaded value),
     @required Result allBorrowersLoaded(AllBorrowersLoaded value),
     @required Result error(Error value),
   });
+
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result empty(Empty value),
     Result loading(Loading value),
-    Result borrowerLoaded(BorrowerLoaded value),
     Result allBorrowersLoaded(AllBorrowersLoaded value),
     Result error(Error value),
     @required Result orElse(),
   });
 }
 
-abstract class $BorrowerStateCopyWith<$Res> {
-  factory $BorrowerStateCopyWith(
-          BorrowerState value, $Res Function(BorrowerState) then) =
-      _$BorrowerStateCopyWithImpl<$Res>;
+abstract class $BorrowersListStateCopyWith<$Res> {
+  factory $BorrowersListStateCopyWith(
+          BorrowersListState value, $Res Function(BorrowersListState) then) =
+      _$BorrowersListStateCopyWithImpl<$Res>;
 }
 
-class _$BorrowerStateCopyWithImpl<$Res>
-    implements $BorrowerStateCopyWith<$Res> {
-  _$BorrowerStateCopyWithImpl(this._value, this._then);
+class _$BorrowersListStateCopyWithImpl<$Res>
+    implements $BorrowersListStateCopyWith<$Res> {
+  _$BorrowersListStateCopyWithImpl(this._value, this._then);
 
-  final BorrowerState _value;
+  final BorrowersListState _value;
+
   // ignore: unused_field
-  final $Res Function(BorrowerState) _then;
+  final $Res Function(BorrowersListState) _then;
 }
 
 abstract class $EmptyCopyWith<$Res> {
@@ -100,7 +94,7 @@ abstract class $EmptyCopyWith<$Res> {
       _$EmptyCopyWithImpl<$Res>;
 }
 
-class _$EmptyCopyWithImpl<$Res> extends _$BorrowerStateCopyWithImpl<$Res>
+class _$EmptyCopyWithImpl<$Res> extends _$BorrowersListStateCopyWithImpl<$Res>
     implements $EmptyCopyWith<$Res> {
   _$EmptyCopyWithImpl(Empty _value, $Res Function(Empty) _then)
       : super(_value, (v) => _then(v as Empty));
@@ -114,13 +108,13 @@ class _$Empty with DiagnosticableTreeMixin implements Empty {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'BorrowerState.empty()';
+    return 'BorrowersListState.empty()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'BorrowerState.empty'));
+    properties..add(DiagnosticsProperty('type', 'BorrowersListState.empty'));
   }
 
   @override
@@ -136,13 +130,11 @@ class _$Empty with DiagnosticableTreeMixin implements Empty {
   Result when<Result extends Object>({
     @required Result empty(),
     @required Result loading(),
-    @required Result borrowerLoaded(@required Borrower borrower),
     @required Result allBorrowersLoaded(@required List<Borrower> borrowersList),
     @required Result error(String message),
   }) {
     assert(empty != null);
     assert(loading != null);
-    assert(borrowerLoaded != null);
     assert(allBorrowersLoaded != null);
     assert(error != null);
     return empty();
@@ -153,7 +145,6 @@ class _$Empty with DiagnosticableTreeMixin implements Empty {
   Result maybeWhen<Result extends Object>({
     Result empty(),
     Result loading(),
-    Result borrowerLoaded(@required Borrower borrower),
     Result allBorrowersLoaded(@required List<Borrower> borrowersList),
     Result error(String message),
     @required Result orElse(),
@@ -170,13 +161,11 @@ class _$Empty with DiagnosticableTreeMixin implements Empty {
   Result map<Result extends Object>({
     @required Result empty(Empty value),
     @required Result loading(Loading value),
-    @required Result borrowerLoaded(BorrowerLoaded value),
     @required Result allBorrowersLoaded(AllBorrowersLoaded value),
     @required Result error(Error value),
   }) {
     assert(empty != null);
     assert(loading != null);
-    assert(borrowerLoaded != null);
     assert(allBorrowersLoaded != null);
     assert(error != null);
     return empty(this);
@@ -187,7 +176,6 @@ class _$Empty with DiagnosticableTreeMixin implements Empty {
   Result maybeMap<Result extends Object>({
     Result empty(Empty value),
     Result loading(Loading value),
-    Result borrowerLoaded(BorrowerLoaded value),
     Result allBorrowersLoaded(AllBorrowersLoaded value),
     Result error(Error value),
     @required Result orElse(),
@@ -200,7 +188,7 @@ class _$Empty with DiagnosticableTreeMixin implements Empty {
   }
 }
 
-abstract class Empty implements BorrowerState {
+abstract class Empty implements BorrowersListState {
   const factory Empty() = _$Empty;
 }
 
@@ -209,7 +197,7 @@ abstract class $LoadingCopyWith<$Res> {
       _$LoadingCopyWithImpl<$Res>;
 }
 
-class _$LoadingCopyWithImpl<$Res> extends _$BorrowerStateCopyWithImpl<$Res>
+class _$LoadingCopyWithImpl<$Res> extends _$BorrowersListStateCopyWithImpl<$Res>
     implements $LoadingCopyWith<$Res> {
   _$LoadingCopyWithImpl(Loading _value, $Res Function(Loading) _then)
       : super(_value, (v) => _then(v as Loading));
@@ -223,13 +211,13 @@ class _$Loading with DiagnosticableTreeMixin implements Loading {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'BorrowerState.loading()';
+    return 'BorrowersListState.loading()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'BorrowerState.loading'));
+    properties..add(DiagnosticsProperty('type', 'BorrowersListState.loading'));
   }
 
   @override
@@ -245,13 +233,11 @@ class _$Loading with DiagnosticableTreeMixin implements Loading {
   Result when<Result extends Object>({
     @required Result empty(),
     @required Result loading(),
-    @required Result borrowerLoaded(@required Borrower borrower),
     @required Result allBorrowersLoaded(@required List<Borrower> borrowersList),
     @required Result error(String message),
   }) {
     assert(empty != null);
     assert(loading != null);
-    assert(borrowerLoaded != null);
     assert(allBorrowersLoaded != null);
     assert(error != null);
     return loading();
@@ -262,7 +248,6 @@ class _$Loading with DiagnosticableTreeMixin implements Loading {
   Result maybeWhen<Result extends Object>({
     Result empty(),
     Result loading(),
-    Result borrowerLoaded(@required Borrower borrower),
     Result allBorrowersLoaded(@required List<Borrower> borrowersList),
     Result error(String message),
     @required Result orElse(),
@@ -279,13 +264,11 @@ class _$Loading with DiagnosticableTreeMixin implements Loading {
   Result map<Result extends Object>({
     @required Result empty(Empty value),
     @required Result loading(Loading value),
-    @required Result borrowerLoaded(BorrowerLoaded value),
     @required Result allBorrowersLoaded(AllBorrowersLoaded value),
     @required Result error(Error value),
   }) {
     assert(empty != null);
     assert(loading != null);
-    assert(borrowerLoaded != null);
     assert(allBorrowersLoaded != null);
     assert(error != null);
     return loading(this);
@@ -296,7 +279,6 @@ class _$Loading with DiagnosticableTreeMixin implements Loading {
   Result maybeMap<Result extends Object>({
     Result empty(Empty value),
     Result loading(Loading value),
-    Result borrowerLoaded(BorrowerLoaded value),
     Result allBorrowersLoaded(AllBorrowersLoaded value),
     Result error(Error value),
     @required Result orElse(),
@@ -309,159 +291,20 @@ class _$Loading with DiagnosticableTreeMixin implements Loading {
   }
 }
 
-abstract class Loading implements BorrowerState {
+abstract class Loading implements BorrowersListState {
   const factory Loading() = _$Loading;
-}
-
-abstract class $BorrowerLoadedCopyWith<$Res> {
-  factory $BorrowerLoadedCopyWith(
-          BorrowerLoaded value, $Res Function(BorrowerLoaded) then) =
-      _$BorrowerLoadedCopyWithImpl<$Res>;
-  $Res call({Borrower borrower});
-}
-
-class _$BorrowerLoadedCopyWithImpl<$Res>
-    extends _$BorrowerStateCopyWithImpl<$Res>
-    implements $BorrowerLoadedCopyWith<$Res> {
-  _$BorrowerLoadedCopyWithImpl(
-      BorrowerLoaded _value, $Res Function(BorrowerLoaded) _then)
-      : super(_value, (v) => _then(v as BorrowerLoaded));
-
-  @override
-  BorrowerLoaded get _value => super._value as BorrowerLoaded;
-
-  @override
-  $Res call({
-    Object borrower = freezed,
-  }) {
-    return _then(BorrowerLoaded(
-      borrower: borrower == freezed ? _value.borrower : borrower as Borrower,
-    ));
-  }
-}
-
-class _$BorrowerLoaded with DiagnosticableTreeMixin implements BorrowerLoaded {
-  const _$BorrowerLoaded({@required this.borrower}) : assert(borrower != null);
-
-  @override
-  final Borrower borrower;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'BorrowerState.borrowerLoaded(borrower: $borrower)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'BorrowerState.borrowerLoaded'))
-      ..add(DiagnosticsProperty('borrower', borrower));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is BorrowerLoaded &&
-            (identical(other.borrower, borrower) ||
-                const DeepCollectionEquality()
-                    .equals(other.borrower, borrower)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(borrower);
-
-  @override
-  $BorrowerLoadedCopyWith<BorrowerLoaded> get copyWith =>
-      _$BorrowerLoadedCopyWithImpl<BorrowerLoaded>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result empty(),
-    @required Result loading(),
-    @required Result borrowerLoaded(@required Borrower borrower),
-    @required Result allBorrowersLoaded(@required List<Borrower> borrowersList),
-    @required Result error(String message),
-  }) {
-    assert(empty != null);
-    assert(loading != null);
-    assert(borrowerLoaded != null);
-    assert(allBorrowersLoaded != null);
-    assert(error != null);
-    return borrowerLoaded(borrower);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result empty(),
-    Result loading(),
-    Result borrowerLoaded(@required Borrower borrower),
-    Result allBorrowersLoaded(@required List<Borrower> borrowersList),
-    Result error(String message),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (borrowerLoaded != null) {
-      return borrowerLoaded(borrower);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result empty(Empty value),
-    @required Result loading(Loading value),
-    @required Result borrowerLoaded(BorrowerLoaded value),
-    @required Result allBorrowersLoaded(AllBorrowersLoaded value),
-    @required Result error(Error value),
-  }) {
-    assert(empty != null);
-    assert(loading != null);
-    assert(borrowerLoaded != null);
-    assert(allBorrowersLoaded != null);
-    assert(error != null);
-    return borrowerLoaded(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result empty(Empty value),
-    Result loading(Loading value),
-    Result borrowerLoaded(BorrowerLoaded value),
-    Result allBorrowersLoaded(AllBorrowersLoaded value),
-    Result error(Error value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (borrowerLoaded != null) {
-      return borrowerLoaded(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class BorrowerLoaded implements BorrowerState {
-  const factory BorrowerLoaded({@required Borrower borrower}) =
-      _$BorrowerLoaded;
-
-  Borrower get borrower;
-  $BorrowerLoadedCopyWith<BorrowerLoaded> get copyWith;
 }
 
 abstract class $AllBorrowersLoadedCopyWith<$Res> {
   factory $AllBorrowersLoadedCopyWith(
           AllBorrowersLoaded value, $Res Function(AllBorrowersLoaded) then) =
       _$AllBorrowersLoadedCopyWithImpl<$Res>;
+
   $Res call({List<Borrower> borrowersList});
 }
 
 class _$AllBorrowersLoadedCopyWithImpl<$Res>
-    extends _$BorrowerStateCopyWithImpl<$Res>
+    extends _$BorrowersListStateCopyWithImpl<$Res>
     implements $AllBorrowersLoadedCopyWith<$Res> {
   _$AllBorrowersLoadedCopyWithImpl(
       AllBorrowersLoaded _value, $Res Function(AllBorrowersLoaded) _then)
@@ -493,14 +336,15 @@ class _$AllBorrowersLoaded
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'BorrowerState.allBorrowersLoaded(borrowersList: $borrowersList)';
+    return 'BorrowersListState.allBorrowersLoaded(borrowersList: $borrowersList)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'BorrowerState.allBorrowersLoaded'))
+      ..add(
+          DiagnosticsProperty('type', 'BorrowersListState.allBorrowersLoaded'))
       ..add(DiagnosticsProperty('borrowersList', borrowersList));
   }
 
@@ -526,13 +370,11 @@ class _$AllBorrowersLoaded
   Result when<Result extends Object>({
     @required Result empty(),
     @required Result loading(),
-    @required Result borrowerLoaded(@required Borrower borrower),
     @required Result allBorrowersLoaded(@required List<Borrower> borrowersList),
     @required Result error(String message),
   }) {
     assert(empty != null);
     assert(loading != null);
-    assert(borrowerLoaded != null);
     assert(allBorrowersLoaded != null);
     assert(error != null);
     return allBorrowersLoaded(borrowersList);
@@ -543,7 +385,6 @@ class _$AllBorrowersLoaded
   Result maybeWhen<Result extends Object>({
     Result empty(),
     Result loading(),
-    Result borrowerLoaded(@required Borrower borrower),
     Result allBorrowersLoaded(@required List<Borrower> borrowersList),
     Result error(String message),
     @required Result orElse(),
@@ -560,13 +401,11 @@ class _$AllBorrowersLoaded
   Result map<Result extends Object>({
     @required Result empty(Empty value),
     @required Result loading(Loading value),
-    @required Result borrowerLoaded(BorrowerLoaded value),
     @required Result allBorrowersLoaded(AllBorrowersLoaded value),
     @required Result error(Error value),
   }) {
     assert(empty != null);
     assert(loading != null);
-    assert(borrowerLoaded != null);
     assert(allBorrowersLoaded != null);
     assert(error != null);
     return allBorrowersLoaded(this);
@@ -577,7 +416,6 @@ class _$AllBorrowersLoaded
   Result maybeMap<Result extends Object>({
     Result empty(Empty value),
     Result loading(Loading value),
-    Result borrowerLoaded(BorrowerLoaded value),
     Result allBorrowersLoaded(AllBorrowersLoaded value),
     Result error(Error value),
     @required Result orElse(),
@@ -590,21 +428,23 @@ class _$AllBorrowersLoaded
   }
 }
 
-abstract class AllBorrowersLoaded implements BorrowerState {
+abstract class AllBorrowersLoaded implements BorrowersListState {
   const factory AllBorrowersLoaded({@required List<Borrower> borrowersList}) =
       _$AllBorrowersLoaded;
 
   List<Borrower> get borrowersList;
+
   $AllBorrowersLoadedCopyWith<AllBorrowersLoaded> get copyWith;
 }
 
 abstract class $ErrorCopyWith<$Res> {
   factory $ErrorCopyWith(Error value, $Res Function(Error) then) =
       _$ErrorCopyWithImpl<$Res>;
+
   $Res call({String message});
 }
 
-class _$ErrorCopyWithImpl<$Res> extends _$BorrowerStateCopyWithImpl<$Res>
+class _$ErrorCopyWithImpl<$Res> extends _$BorrowersListStateCopyWithImpl<$Res>
     implements $ErrorCopyWith<$Res> {
   _$ErrorCopyWithImpl(Error _value, $Res Function(Error) _then)
       : super(_value, (v) => _then(v as Error));
@@ -630,14 +470,14 @@ class _$Error with DiagnosticableTreeMixin implements Error {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'BorrowerState.error(message: $message)';
+    return 'BorrowersListState.error(message: $message)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'BorrowerState.error'))
+      ..add(DiagnosticsProperty('type', 'BorrowersListState.error'))
       ..add(DiagnosticsProperty('message', message));
   }
 
@@ -662,13 +502,11 @@ class _$Error with DiagnosticableTreeMixin implements Error {
   Result when<Result extends Object>({
     @required Result empty(),
     @required Result loading(),
-    @required Result borrowerLoaded(@required Borrower borrower),
     @required Result allBorrowersLoaded(@required List<Borrower> borrowersList),
     @required Result error(String message),
   }) {
     assert(empty != null);
     assert(loading != null);
-    assert(borrowerLoaded != null);
     assert(allBorrowersLoaded != null);
     assert(error != null);
     return error(message);
@@ -679,7 +517,6 @@ class _$Error with DiagnosticableTreeMixin implements Error {
   Result maybeWhen<Result extends Object>({
     Result empty(),
     Result loading(),
-    Result borrowerLoaded(@required Borrower borrower),
     Result allBorrowersLoaded(@required List<Borrower> borrowersList),
     Result error(String message),
     @required Result orElse(),
@@ -696,13 +533,11 @@ class _$Error with DiagnosticableTreeMixin implements Error {
   Result map<Result extends Object>({
     @required Result empty(Empty value),
     @required Result loading(Loading value),
-    @required Result borrowerLoaded(BorrowerLoaded value),
     @required Result allBorrowersLoaded(AllBorrowersLoaded value),
     @required Result error(Error value),
   }) {
     assert(empty != null);
     assert(loading != null);
-    assert(borrowerLoaded != null);
     assert(allBorrowersLoaded != null);
     assert(error != null);
     return error(this);
@@ -713,7 +548,6 @@ class _$Error with DiagnosticableTreeMixin implements Error {
   Result maybeMap<Result extends Object>({
     Result empty(Empty value),
     Result loading(Loading value),
-    Result borrowerLoaded(BorrowerLoaded value),
     Result allBorrowersLoaded(AllBorrowersLoaded value),
     Result error(Error value),
     @required Result orElse(),
@@ -726,9 +560,10 @@ class _$Error with DiagnosticableTreeMixin implements Error {
   }
 }
 
-abstract class Error implements BorrowerState {
+abstract class Error implements BorrowersListState {
   const factory Error({String message}) = _$Error;
 
   String get message;
+
   $ErrorCopyWith<Error> get copyWith;
 }

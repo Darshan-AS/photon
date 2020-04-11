@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:http/http.dart' as http;
 import 'package:flutter/foundation.dart';
+import 'package:http/http.dart' as http;
 import 'package:photon/core/error/exceptions.dart';
 import 'package:photon/features/borrower/data/models/borrower_model.dart';
 

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
 
-part of 'borrower_event.dart';
+part of 'borrower_detail_event.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -9,8 +9,8 @@ part of 'borrower_event.dart';
 
 T _$identity<T>(T value) => value;
 
-class _$BorrowerEventTearOff {
-  const _$BorrowerEventTearOff();
+class _$BorrowerDetailEventTearOff {
+  const _$BorrowerDetailEventTearOff();
 
   GetBorrowerEvent getBorrower(String idString) {
     return GetBorrowerEvent(
@@ -18,56 +18,56 @@ class _$BorrowerEventTearOff {
     );
   }
 
-  GetAllBorrowersEvent getAllBorrowers() {
-    return const GetAllBorrowersEvent();
+  DummyEvent dummyEvent() {
+    return const DummyEvent();
   }
 }
 
 // ignore: unused_element
-const $BorrowerEvent = _$BorrowerEventTearOff();
+const $BorrowerDetailEvent = _$BorrowerDetailEventTearOff();
 
-mixin _$BorrowerEvent {
+mixin _$BorrowerDetailEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result getBorrower(String idString),
-    @required Result getAllBorrowers(),
+    @required Result dummyEvent(),
   });
 
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result getBorrower(String idString),
-    Result getAllBorrowers(),
+    Result dummyEvent(),
     @required Result orElse(),
   });
 
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result getBorrower(GetBorrowerEvent value),
-    @required Result getAllBorrowers(GetAllBorrowersEvent value),
+    @required Result dummyEvent(DummyEvent value),
   });
 
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result getBorrower(GetBorrowerEvent value),
-    Result getAllBorrowers(GetAllBorrowersEvent value),
+    Result dummyEvent(DummyEvent value),
     @required Result orElse(),
   });
 }
 
-abstract class $BorrowerEventCopyWith<$Res> {
-  factory $BorrowerEventCopyWith(
-          BorrowerEvent value, $Res Function(BorrowerEvent) then) =
-      _$BorrowerEventCopyWithImpl<$Res>;
+abstract class $BorrowerDetailEventCopyWith<$Res> {
+  factory $BorrowerDetailEventCopyWith(
+          BorrowerDetailEvent value, $Res Function(BorrowerDetailEvent) then) =
+      _$BorrowerDetailEventCopyWithImpl<$Res>;
 }
 
-class _$BorrowerEventCopyWithImpl<$Res>
-    implements $BorrowerEventCopyWith<$Res> {
-  _$BorrowerEventCopyWithImpl(this._value, this._then);
+class _$BorrowerDetailEventCopyWithImpl<$Res>
+    implements $BorrowerDetailEventCopyWith<$Res> {
+  _$BorrowerDetailEventCopyWithImpl(this._value, this._then);
 
-  final BorrowerEvent _value;
+  final BorrowerDetailEvent _value;
 
   // ignore: unused_field
-  final $Res Function(BorrowerEvent) _then;
+  final $Res Function(BorrowerDetailEvent) _then;
 }
 
 abstract class $GetBorrowerEventCopyWith<$Res> {
@@ -79,7 +79,7 @@ abstract class $GetBorrowerEventCopyWith<$Res> {
 }
 
 class _$GetBorrowerEventCopyWithImpl<$Res>
-    extends _$BorrowerEventCopyWithImpl<$Res>
+    extends _$BorrowerDetailEventCopyWithImpl<$Res>
     implements $GetBorrowerEventCopyWith<$Res> {
   _$GetBorrowerEventCopyWithImpl(
       GetBorrowerEvent _value, $Res Function(GetBorrowerEvent) _then)
@@ -108,14 +108,14 @@ class _$GetBorrowerEvent
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'BorrowerEvent.getBorrower(idString: $idString)';
+    return 'BorrowerDetailEvent.getBorrower(idString: $idString)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'BorrowerEvent.getBorrower'))
+      ..add(DiagnosticsProperty('type', 'BorrowerDetailEvent.getBorrower'))
       ..add(DiagnosticsProperty('idString', idString));
   }
 
@@ -140,10 +140,10 @@ class _$GetBorrowerEvent
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result getBorrower(String idString),
-    @required Result getAllBorrowers(),
+    @required Result dummyEvent(),
   }) {
     assert(getBorrower != null);
-    assert(getAllBorrowers != null);
+    assert(dummyEvent != null);
     return getBorrower(idString);
   }
 
@@ -151,7 +151,7 @@ class _$GetBorrowerEvent
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result getBorrower(String idString),
-    Result getAllBorrowers(),
+    Result dummyEvent(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -165,10 +165,10 @@ class _$GetBorrowerEvent
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result getBorrower(GetBorrowerEvent value),
-    @required Result getAllBorrowers(GetAllBorrowersEvent value),
+    @required Result dummyEvent(DummyEvent value),
   }) {
     assert(getBorrower != null);
-    assert(getAllBorrowers != null);
+    assert(dummyEvent != null);
     return getBorrower(this);
   }
 
@@ -176,7 +176,7 @@ class _$GetBorrowerEvent
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result getBorrower(GetBorrowerEvent value),
-    Result getAllBorrowers(GetAllBorrowersEvent value),
+    Result dummyEvent(DummyEvent value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -187,7 +187,7 @@ class _$GetBorrowerEvent
   }
 }
 
-abstract class GetBorrowerEvent implements BorrowerEvent {
+abstract class GetBorrowerEvent implements BorrowerDetailEvent {
   const factory GetBorrowerEvent(String idString) = _$GetBorrowerEvent;
 
   String get idString;
@@ -195,43 +195,40 @@ abstract class GetBorrowerEvent implements BorrowerEvent {
   $GetBorrowerEventCopyWith<GetBorrowerEvent> get copyWith;
 }
 
-abstract class $GetAllBorrowersEventCopyWith<$Res> {
-  factory $GetAllBorrowersEventCopyWith(GetAllBorrowersEvent value,
-          $Res Function(GetAllBorrowersEvent) then) =
-      _$GetAllBorrowersEventCopyWithImpl<$Res>;
+abstract class $DummyEventCopyWith<$Res> {
+  factory $DummyEventCopyWith(
+          DummyEvent value, $Res Function(DummyEvent) then) =
+      _$DummyEventCopyWithImpl<$Res>;
 }
 
-class _$GetAllBorrowersEventCopyWithImpl<$Res>
-    extends _$BorrowerEventCopyWithImpl<$Res>
-    implements $GetAllBorrowersEventCopyWith<$Res> {
-  _$GetAllBorrowersEventCopyWithImpl(
-      GetAllBorrowersEvent _value, $Res Function(GetAllBorrowersEvent) _then)
-      : super(_value, (v) => _then(v as GetAllBorrowersEvent));
+class _$DummyEventCopyWithImpl<$Res>
+    extends _$BorrowerDetailEventCopyWithImpl<$Res>
+    implements $DummyEventCopyWith<$Res> {
+  _$DummyEventCopyWithImpl(DummyEvent _value, $Res Function(DummyEvent) _then)
+      : super(_value, (v) => _then(v as DummyEvent));
 
   @override
-  GetAllBorrowersEvent get _value => super._value as GetAllBorrowersEvent;
+  DummyEvent get _value => super._value as DummyEvent;
 }
 
-class _$GetAllBorrowersEvent
-    with DiagnosticableTreeMixin
-    implements GetAllBorrowersEvent {
-  const _$GetAllBorrowersEvent();
+class _$DummyEvent with DiagnosticableTreeMixin implements DummyEvent {
+  const _$DummyEvent();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'BorrowerEvent.getAllBorrowers()';
+    return 'BorrowerDetailEvent.dummyEvent()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'BorrowerEvent.getAllBorrowers'));
+      ..add(DiagnosticsProperty('type', 'BorrowerDetailEvent.dummyEvent'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is GetAllBorrowersEvent);
+    return identical(this, other) || (other is DummyEvent);
   }
 
   @override
@@ -241,23 +238,23 @@ class _$GetAllBorrowersEvent
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result getBorrower(String idString),
-    @required Result getAllBorrowers(),
+    @required Result dummyEvent(),
   }) {
     assert(getBorrower != null);
-    assert(getAllBorrowers != null);
-    return getAllBorrowers();
+    assert(dummyEvent != null);
+    return dummyEvent();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result getBorrower(String idString),
-    Result getAllBorrowers(),
+    Result dummyEvent(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (getAllBorrowers != null) {
-      return getAllBorrowers();
+    if (dummyEvent != null) {
+      return dummyEvent();
     }
     return orElse();
   }
@@ -266,28 +263,28 @@ class _$GetAllBorrowersEvent
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result getBorrower(GetBorrowerEvent value),
-    @required Result getAllBorrowers(GetAllBorrowersEvent value),
+    @required Result dummyEvent(DummyEvent value),
   }) {
     assert(getBorrower != null);
-    assert(getAllBorrowers != null);
-    return getAllBorrowers(this);
+    assert(dummyEvent != null);
+    return dummyEvent(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result getBorrower(GetBorrowerEvent value),
-    Result getAllBorrowers(GetAllBorrowersEvent value),
+    Result dummyEvent(DummyEvent value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (getAllBorrowers != null) {
-      return getAllBorrowers(this);
+    if (dummyEvent != null) {
+      return dummyEvent(this);
     }
     return orElse();
   }
 }
 
-abstract class GetAllBorrowersEvent implements BorrowerEvent {
-  const factory GetAllBorrowersEvent() = _$GetAllBorrowersEvent;
+abstract class DummyEvent implements BorrowerDetailEvent {
+  const factory DummyEvent() = _$DummyEvent;
 }
