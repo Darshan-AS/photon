@@ -3,23 +3,18 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:photon/core/error/failures.dart';
-import 'package:photon/core/usecases/usecase.dart';
 import 'package:photon/core/util/input_converter.dart';
 import 'package:photon/features/borrower/domain/entities/borrower.dart';
-import 'package:photon/features/borrower/domain/usecases/get_all_borrowers.dart';
 import 'package:photon/features/borrower/domain/usecases/get_borrower.dart';
-import 'package:photon/features/borrower/presentation/bloc/bloc.dart';
+import 'package:photon/features/borrower/presentation/bloc/borrower_detail/bloc.dart';
 
 class MockGetBorrower extends Mock implements GetBorrower {}
-
-class MockGetAllBorrowers extends Mock implements GetAllBorrowers {}
 
 class MockInputConverter extends Mock implements InputConverter {}
 
 void main() {
-  BorrowerBloc bloc;
+  BorrowerDetailBloc bloc;
   MockGetBorrower mockGetBorrower;
-  MockGetAllBorrowers mockGetAllBorrowers;
   MockInputConverter mockInputConverter;
 
   final Borrower tBorrower = Borrower(
@@ -32,25 +27,12 @@ void main() {
     address: '1007, Mountain Drive, Gotham, New Jersey, United States',
   );
 
-  final tOtherBorrower = Borrower(
-    id: 2,
-    name: 'Clark Kent',
-    gender: 'M',
-    dob: '1973-06-18',
-    email: 'clark.kent@gmail.com',
-    phone: '0987654321',
-    address:
-        '344, Clinton street, Apartment 3D, Metropolis, New York, United States',
-  );
-
   setUp(() {
     mockGetBorrower = MockGetBorrower();
-    mockGetAllBorrowers = MockGetAllBorrowers();
     mockInputConverter = MockInputConverter();
 
-    bloc = BorrowerBloc(
+    bloc = BorrowerDetailBloc(
       getBorrower: mockGetBorrower,
-      getAllBorrowers: mockGetAllBorrowers,
       inputConverter: mockInputConverter,
     );
   });
@@ -63,7 +45,7 @@ void main() {
     'should return an [Empty] state as the initial bloc state',
     build: () async => bloc,
     skip: 0,
-    expect: [BorrowerState.empty()],
+    expect: [BorrowerDetailState.empty()],
   );
 
   group('getBorrowerEvent', () {
@@ -95,9 +77,11 @@ void main() {
       act: (bloc) {
         setUpMockInputConverterFailure();
 
-        return bloc.add(BorrowerEvent.getBorrower('12@4'));
+        return bloc.add(BorrowerDetailEvent.getBorrower('12@4'));
       },
-      expect: [Error(message: INVALID_INPUT_FAILURE_MESSAGE)],
+      expect: [
+        BorrowerDetailState.error(message: INVALID_INPUT_FAILURE_MESSAGE)
+      ],
     );
 
     blocTest(
@@ -107,7 +91,7 @@ void main() {
         setUpMockInputConverterSuccess();
         setUpMockGetBorrowerSuccess();
 
-        return bloc.add(BorrowerEvent.getBorrower(tIdString));
+        return bloc.add(BorrowerDetailEvent.getBorrower(tIdString));
       },
       verify: (_) async => verify(mockGetBorrower(Params(id: tIdParsed))),
     );
@@ -119,11 +103,11 @@ void main() {
         setUpMockInputConverterSuccess();
         setUpMockGetBorrowerSuccess();
 
-        return bloc.add(BorrowerEvent.getBorrower(tIdString));
+        return bloc.add(BorrowerDetailEvent.getBorrower(tIdString));
       },
       expect: [
-        BorrowerState.loading(),
-        BorrowerState.borrowerLoaded(borrower: tBorrower)
+        BorrowerDetailState.loading(),
+        BorrowerDetailState.borrowerLoaded(borrower: tBorrower)
       ],
     );
 
@@ -134,60 +118,11 @@ void main() {
         setUpMockInputConverterSuccess();
         setUpMockGetBorrowerFailure();
 
-        return bloc.add(BorrowerEvent.getBorrower(tIdString));
+        return bloc.add(BorrowerDetailEvent.getBorrower(tIdString));
       },
       expect: [
-        BorrowerState.loading(),
-        BorrowerState.error(message: SERVER_FAILURE_MESSAGE)
-      ],
-    );
-  });
-
-  group('getAllBorrowersEvent', () {
-    final tAllBorrowers = [tBorrower, tOtherBorrower];
-
-    void setUpMockGetAllBorrowersSuccess() => when(mockGetAllBorrowers(any))
-        .thenAnswer((_) async => Right(tAllBorrowers));
-
-    void setUpMockGetAllBorrowersFailure() => when(mockGetAllBorrowers(any))
-        .thenAnswer((_) async => Left(ServerFailure()));
-
-    blocTest(
-      'should call GetAllBorrowers usecase to get data',
-      build: () async => bloc,
-      act: (bloc) {
-        setUpMockGetAllBorrowersSuccess();
-
-        return bloc.add(BorrowerEvent.getAllBorrowers());
-      },
-      verify: (_) async => verify(mockGetAllBorrowers(NoParams())),
-    );
-
-    blocTest(
-      'should emit [Loading, AllBorrowersLoaded] when getAllBorrowers is successfull',
-      build: () async => bloc,
-      act: (bloc) {
-        setUpMockGetAllBorrowersSuccess();
-
-        return bloc.add(BorrowerEvent.getAllBorrowers());
-      },
-      expect: [
-        BorrowerState.loading(),
-        BorrowerState.allBorrowersLoaded(borrowersList: tAllBorrowers)
-      ],
-    );
-
-    blocTest(
-      'should emit [Loading, Error] when getAllBorrowers is unsuccessfull',
-      build: () async => bloc,
-      act: (bloc) {
-        setUpMockGetAllBorrowersFailure();
-
-        return bloc.add(BorrowerEvent.getAllBorrowers());
-      },
-      expect: [
-        BorrowerState.loading(),
-        BorrowerState.error(message: SERVER_FAILURE_MESSAGE)
+        BorrowerDetailState.loading(),
+        BorrowerDetailState.error(message: SERVER_FAILURE_MESSAGE)
       ],
     );
   });
