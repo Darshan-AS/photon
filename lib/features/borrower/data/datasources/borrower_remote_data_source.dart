@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:http/http.dart' as http;
 import 'package:flutter/foundation.dart';
+import 'package:http/http.dart' as http;
 import 'package:photon/core/error/exceptions.dart';
 import 'package:photon/features/borrower/data/models/borrower_model.dart';
 
@@ -19,13 +19,15 @@ class BorrowerRemoteDataSourceImpl implements BorrowerRemoteDataSource {
   @override
   Future<BorrowerModel> getBorrower(int id) async =>
       BorrowerModel.fromJson(jsonDecode(await _getResponseFromUrl(
-        'http://localhost:8000/users/api/borrowers/$id/',
+//        'http://localhost:8000/users/api/borrowers/$id/',
+        'http://www.mocky.io/v2/5e90bc253300003700e9cc39',
       )));
 
   @override
   Future<List<BorrowerModel>> getAllBorrowers() async =>
       BorrowerModel.fromJsonList(jsonDecode(await _getResponseFromUrl(
-        'http://localhost:8000/users/api/borrowers/',
+//        'http://localhost:8000/users/api/borrowers/',
+        'http://www.mocky.io/v2/5e90b8723300008b00e9cc29',
       )));
 
   Future<String> _getResponseFromUrl(String url) async {

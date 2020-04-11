@@ -6,7 +6,8 @@ import 'package:photon/features/borrower/data/repositories/borrower_repository_i
 import 'package:photon/features/borrower/domain/repositories/borrower_repository.dart';
 import 'package:photon/features/borrower/domain/usecases/get_all_borrowers.dart';
 import 'package:photon/features/borrower/domain/usecases/get_borrower.dart';
-import 'package:photon/features/borrower/presentation/bloc/bloc.dart';
+import 'package:photon/features/borrower/presentation/bloc/borrower_detail/bloc.dart';
+import 'package:photon/features/borrower/presentation/bloc/borrowers_list/bloc.dart';
 
 final serviceLocator = GetIt.instance;
 
@@ -14,9 +15,13 @@ Future<void> init() async {
 // Features
 
   // Bloc
-  serviceLocator.registerFactory(() => BorrowerBloc(
-        getBorrower: serviceLocator(),
+  serviceLocator.registerFactory(() => BorrowersListBloc(
         getAllBorrowers: serviceLocator(),
+        inputConverter: serviceLocator(),
+      ));
+
+  serviceLocator.registerFactory(() => BorrowerDetailBloc(
+        getBorrower: serviceLocator(),
         inputConverter: serviceLocator(),
       ));
 
