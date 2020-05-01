@@ -54,7 +54,8 @@ class FirebaseAuthRepository implements AuthRepository {
       );
       return const Right(unit);
     } on PlatformException catch (e) {
-      if (e.code == 'ERROR_WRONG_PASSWORD' || e.code == 'ERROR_USER_NOT_FOUND') {
+      if (e.code == 'ERROR_WRONG_PASSWORD' ||
+          e.code == 'ERROR_USER_NOT_FOUND') {
         return const Left(AuthFailure.invalidEmailOrPassword());
       } else {
         return const Left(AuthFailure.serverError());
