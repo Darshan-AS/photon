@@ -21,6 +21,8 @@ dependencies:
     sdk: flutter
   # Service locator
   get_it: ^4.0.2
+  # Dependency Injection
+  injectable: ^0.3.0
   # Bloc for state management
   flutter_bloc: ^4.0.0
   # Value equality
@@ -45,6 +47,8 @@ dev_dependencies:
   bloc_test: ^5.0.0
   build_runner: ^1.9.0
   freezed: ^0.10.7
+  injectable_generator: ^0.3.5
+  lint: ^1.1.1
 
 
 # For information on the generic Dart part of this file, see the

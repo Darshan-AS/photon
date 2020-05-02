@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:injectable/injectable.dart';
 import 'package:photon/features/borrower/presentation/bloc/borrower_detail/bloc.dart';
 import 'package:photon/injection_container.dart' as dependencyInjector;
 import 'package:photon/router.dart';
@@ -8,6 +9,7 @@ import 'features/borrower/presentation/bloc/borrowers_list/bloc.dart';
 import 'injection_container.dart';
 
 Future<void> main() async {
+  configureInjection(Environment.prod);
   await dependencyInjector.init();
   runApp(Photon());
 }

@@ -1,5 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart' as http;
+import 'package:injectable/injectable.dart';
 import 'package:photon/core/util/input_converter.dart';
 import 'package:photon/features/borrower/data/datasources/borrower_remote_data_source.dart';
 import 'package:photon/features/borrower/data/repositories/borrower_repository_impl.dart';
@@ -8,6 +9,15 @@ import 'package:photon/features/borrower/domain/usecases/get_all_borrowers.dart'
 import 'package:photon/features/borrower/domain/usecases/get_borrower.dart';
 import 'package:photon/features/borrower/presentation/bloc/borrower_detail/bloc.dart';
 import 'package:photon/features/borrower/presentation/bloc/borrowers_list/bloc.dart';
+
+import 'injection_container.iconfig.dart';
+
+final GetIt getIt = GetIt.instance;
+
+@injectableInit
+void configureInjection(String env) {
+  $initGetIt(getIt, environment: env);
+}
 
 final serviceLocator = GetIt.instance;
 

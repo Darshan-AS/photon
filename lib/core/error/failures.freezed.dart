@@ -40,7 +40,6 @@ mixin _$AuthFailure {
     @required Result emailAlreadyInUse(),
     @required Result invalidEmailOrPassword(),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result cancelledByUser(),
@@ -49,7 +48,6 @@ mixin _$AuthFailure {
     Result invalidEmailOrPassword(),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result cancelledByUser(CancelledByUser value),
@@ -57,7 +55,6 @@ mixin _$AuthFailure {
     @required Result emailAlreadyInUse(EmailAlreadyInUse value),
     @required Result invalidEmailOrPassword(InvalidEmailOrPassword value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result cancelledByUser(CancelledByUser value),
@@ -78,7 +75,6 @@ class _$AuthFailureCopyWithImpl<$Res> implements $AuthFailureCopyWith<$Res> {
   _$AuthFailureCopyWithImpl(this._value, this._then);
 
   final AuthFailure _value;
-
   // ignore: unused_field
   final $Res Function(AuthFailure) _then;
 }
@@ -506,23 +502,20 @@ mixin _$ValueFailure<T> {
 
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result invalidEmail(@required String invalidValue),
-    @required Result shortPassword(@required String invalidValue),
+    @required Result invalidEmail(String invalidValue),
+    @required Result shortPassword(String invalidValue),
   });
-
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result invalidEmail(@required String invalidValue),
-    Result shortPassword(@required String invalidValue),
+    Result invalidEmail(String invalidValue),
+    Result shortPassword(String invalidValue),
     @required Result orElse(),
   });
-
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result invalidEmail(InvalidEmail<T> value),
     @required Result shortPassword(ShortPassword<T> value),
   });
-
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result invalidEmail(InvalidEmail<T> value),
@@ -537,7 +530,6 @@ abstract class $ValueFailureCopyWith<T, $Res> {
   factory $ValueFailureCopyWith(
           ValueFailure<T> value, $Res Function(ValueFailure<T>) then) =
       _$ValueFailureCopyWithImpl<T, $Res>;
-
   $Res call({String invalidValue});
 }
 
@@ -546,7 +538,6 @@ class _$ValueFailureCopyWithImpl<T, $Res>
   _$ValueFailureCopyWithImpl(this._value, this._then);
 
   final ValueFailure<T> _value;
-
   // ignore: unused_field
   final $Res Function(ValueFailure<T>) _then;
 
@@ -567,7 +558,6 @@ abstract class $InvalidEmailCopyWith<T, $Res>
   factory $InvalidEmailCopyWith(
           InvalidEmail<T> value, $Res Function(InvalidEmail<T>) then) =
       _$InvalidEmailCopyWithImpl<T, $Res>;
-
   @override
   $Res call({String invalidValue});
 }
@@ -626,8 +616,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result invalidEmail(@required String invalidValue),
-    @required Result shortPassword(@required String invalidValue),
+    @required Result invalidEmail(String invalidValue),
+    @required Result shortPassword(String invalidValue),
   }) {
     assert(invalidEmail != null);
     assert(shortPassword != null);
@@ -637,8 +627,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result invalidEmail(@required String invalidValue),
-    Result shortPassword(@required String invalidValue),
+    Result invalidEmail(String invalidValue),
+    Result shortPassword(String invalidValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -680,7 +670,6 @@ abstract class InvalidEmail<T> implements ValueFailure<T> {
 
   @override
   String get invalidValue;
-
   @override
   $InvalidEmailCopyWith<T, InvalidEmail<T>> get copyWith;
 }
@@ -690,7 +679,6 @@ abstract class $ShortPasswordCopyWith<T, $Res>
   factory $ShortPasswordCopyWith(
           ShortPassword<T> value, $Res Function(ShortPassword<T>) then) =
       _$ShortPasswordCopyWithImpl<T, $Res>;
-
   @override
   $Res call({String invalidValue});
 }
@@ -749,8 +737,8 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result invalidEmail(@required String invalidValue),
-    @required Result shortPassword(@required String invalidValue),
+    @required Result invalidEmail(String invalidValue),
+    @required Result shortPassword(String invalidValue),
   }) {
     assert(invalidEmail != null);
     assert(shortPassword != null);
@@ -760,8 +748,8 @@ class _$ShortPassword<T> implements ShortPassword<T> {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result invalidEmail(@required String invalidValue),
-    Result shortPassword(@required String invalidValue),
+    Result invalidEmail(String invalidValue),
+    Result shortPassword(String invalidValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -803,7 +791,6 @@ abstract class ShortPassword<T> implements ValueFailure<T> {
 
   @override
   String get invalidValue;
-
   @override
   $ShortPasswordCopyWith<T, ShortPassword<T>> get copyWith;
 }

@@ -3,10 +3,13 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:injectable/injectable.dart';
 import 'package:photon/core/error/failures.dart';
 import 'package:photon/features/auth/domain/entities.dart';
 import 'package:photon/features/auth/domain/repositories/auth_repository.dart';
 
+@lazySingleton
+@RegisterAs(AuthRepository)
 class FirebaseAuthRepository implements AuthRepository {
   final FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;

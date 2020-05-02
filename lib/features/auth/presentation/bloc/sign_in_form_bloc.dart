@@ -3,12 +3,14 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:photon/core/error/failures.dart';
 import 'package:photon/features/auth/domain/entities.dart';
 import 'package:photon/features/auth/domain/repositories/auth_repository.dart';
 
 import 'bloc.dart';
 
+@injectable
 class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
   final AuthRepository _authRepository;
 
